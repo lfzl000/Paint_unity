@@ -11,15 +11,20 @@ public class ExampleScript : MonoBehaviour
     public string printerName = "";     //打印机名称，如果为空使用默认打印机
     public int copies = 1;              //打印份数
 
-    public InputField inputField;
+    public InputField inputField_Local, inputField_Web;
 
     public void PrintTextureButton()
     {
-        Print.PrintTexture(texture2D.EncodeToPNG(), copies, printerName);
+        Print.instance.PrintTexture(texture2D.EncodeToPNG(), copies, printerName);
     }
 
     public void PrintByPathButton()
     {
-        Print.PrintTextureByPath(inputField.text.Trim(), copies, printerName);
+        Print.instance.PrintTextureByPath(inputField_Local.text.Trim(), copies, printerName);
+    }
+
+    public void PrintByWebButton()
+    {
+        Print.instance.PrintTextureByPath(inputField_Web.text.Trim(), copies, printerName);
     }
 }
