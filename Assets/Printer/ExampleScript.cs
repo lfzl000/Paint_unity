@@ -25,6 +25,6 @@ public class ExampleScript : MonoBehaviour
 
     public void PrintByWebButton()
     {
-        Print.instance.PrintTextureByPath(inputField_Web.text.Trim(), copies, printerName);
+        Print.instance.PrintWebTexture(inputField_Web.text.Trim(), copies, printerName);
     }
 }
